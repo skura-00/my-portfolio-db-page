@@ -19,8 +19,8 @@
 
 .container button {
   margin-top: 5%;
-  min-width: 100px;
-  min-height: 35px;
+  width: 100%;
+  min-height: 3vw;
   background-color: white;
   border-color: black;
   color: black;

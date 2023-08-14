@@ -1,6 +1,7 @@
 import React from 'react';
 import { useDispatch, useSelector} from 'react-redux';
-import { select, allMembers } from '../../storage/dataSlice';
+import { select } from '../../storage/dataSlice';
+import SelectClub  from './selectClub';
 import '../css/select.css'
 
 function Member(id, adrs, fname, lname, dob, eml) {
@@ -10,9 +11,8 @@ function Member(id, adrs, fname, lname, dob, eml) {
 
 // https://www.youtube.com/watch?v=1MtHkHpUbS4
 // Table: https://mui.com/material-ui/react-table/#api
-function Select() {
+function SelectMember() {
   const dispatch = useDispatch()
-  const members = useSelector(allMembers)
   
   let memberList = []
 
@@ -37,12 +37,10 @@ function Select() {
           memberList.push(Member(m.StudentID, m.Member_Address, m.First_Name, m.Last_Name, m.Date_Of_Birth, m.Email))
         });
 
-        // Member_Address, First_Name, Last_Name, Date_Of_Birth, Email
 
         memberList.forEach((m) => {
 
           const shorten = m.dob ? m.dob.substring(0, 10) : '';
-          console.log(m + " " + m.id)
           document.getElementById("out").insertAdjacentHTML('beforeend', 
           `<tbody>
             <tr>
@@ -63,11 +61,13 @@ function Select() {
 
   return (
     <div>
+
       <form onSubmit={submitHandler}>
         <h3>Memberのリストを表示</h3>
+        <p>SELECT * FROM MEMBER</p>
         <button type="submit">表示</button>
       </form> 
-      
+
       <table id="out" style={{textAlign:'left'}}>
         <tbody>
           <tr>
@@ -80,10 +80,9 @@ function Select() {
           </tr>
         </tbody>
       </table>
-
     </div>
   );
 }
 
-export default Select;
+export default SelectMember;
 

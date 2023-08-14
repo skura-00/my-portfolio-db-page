@@ -30,6 +30,16 @@ export const select = createAsyncThunk('data/select/', async() => {
   }
 })
 
+
+export const selectClub = createAsyncThunk('data/selectClub/', async() => {
+  try {
+    const res = await axios.get('https://db-page-practice-0f7c8e4a291d.herokuapp.com/selectClub/')
+    return res.data
+  } catch (err) {
+    console.log(err)
+  }
+})
+
 const initialState = {
   address: '',
   firstName: '', 
@@ -37,7 +47,8 @@ const initialState = {
   dob: '', 
   email: '',
   error: null,
-  members: []
+  members: [],
+  projects: []
 }
 
 const dataSlice = createSlice({
@@ -61,10 +72,11 @@ const dataSlice = createSlice({
     .addCase(select.rejected, (state, action) => {
       console.log(state.error)
     })
+    .addCase(selectClub.fulfilled, (state, action) => {
+      state.projects = state.projects.concat(action.payload)
+    })
   },
 })
-
-export const allMembers = (state) => state.members
 
 
 export default dataSlice.reducer
