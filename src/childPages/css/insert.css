@@ -1,0 +1,38 @@
+* {
+  font-family: 'ヒラギノ角ゴシック', sans-serif, monospace;
+}
+
+.container {
+  padding: 5% 20%;
+  margin: 10% 10% 5% 10%;
+  border: 5px solid lightsalmon;
+  text-align: center;
+}
+
+.container section  {
+  margin-bottom: 10px;
+}
+
+.container section label {
+  margin-right: 20px;
+}
+
+.container button {
+  margin-top: 5%;
+  min-width: 100px;
+  min-height: 35px;
+  background-color: white;
+  border-color: black;
+  color: black;
+}
+
+.container button:hover {
+  background-color: lightsalmon;
+  border-color: black;
+  color: white;
+}
+
+
+p {
+  text-align: center;
+}
