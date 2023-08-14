@@ -34,7 +34,7 @@ function Select() {
     .then((res) => {
       if (res.payload != undefined && res.payload.length > 0) {
         (res.payload).forEach((m) => {
-          memberList.push(Member(m.StudentId, m.Member_Address, m.First_Name, m.Last_Name, m.Date_Of_Birth, m.Email))
+          memberList.push(Member(m.StudentID, m.Member_Address, m.First_Name, m.Last_Name, m.Date_Of_Birth, m.Email))
         });
 
         // Member_Address, First_Name, Last_Name, Date_Of_Birth, Email
