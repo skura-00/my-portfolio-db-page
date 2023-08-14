@@ -1,5 +1,5 @@
 import { useState } from 'react';
-import { useDispatch, useSelector } from 'react-redux'
+import { useDispatch } from 'react-redux'
 import { insert } from '../../storage/dataSlice';
 import '../css/insert.css';
 
@@ -73,7 +73,6 @@ function Insert() {
   );
 }
 
-// Error: 新規メンバーを追加できませんでした。値を確認して再度お試しください。
 
 export default Insert;
 

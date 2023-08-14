@@ -1,4 +1,4 @@
-import React, { useEffect } from 'react';
+import React from 'react';
 import { useDispatch, useSelector} from 'react-redux';
 import { select, allMembers } from '../../storage/dataSlice';
 import '../css/select.css'
