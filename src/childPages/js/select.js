@@ -38,6 +38,7 @@ function Select() {
         });
 
         memberList.forEach((m) => {
+          const shorten = this.m.dob ? this.m.dob.substring(0, 10) : '';
           document.getElementById("out").insertAdjacentHTML('beforeend', 
           `<tbody>
             <tr>
@@ -46,7 +47,7 @@ function Select() {
               <td>${m.lname}</td> 
               <td>${m.adrs}</td> 
               <td>${m.eml}</td> 
-              <td>${(m.dob).substring(0, 10)}</td> 
+              <td>${shorten}</td> 
             </tr>
           </tbody>`)
           
