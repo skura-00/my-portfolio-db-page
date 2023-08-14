@@ -6,7 +6,7 @@ import { createAsyncThunk, createSlice } from '@reduxjs/toolkit';
 // insert action
 export const insert = createAsyncThunk('data/insert', async({address, firstName, lastName, dob, email}) => {
   try {
-    const res = await axios.post('https://db-page-practice-0f7c8e4a291d.herokuapp.com/insert/', {address: address, firstName: firstName, lastName: lastName, dateOfBirth: dob, email: email})
+    const res = await axios.post('https://db-page-practice-0f7c8e4a291d.herokuapp.com/insert', {address: address, firstName: firstName, lastName: lastName, dateOfBirth: dob, email: email})
     return res.data
   } catch (err) {
     console.log(err)
@@ -16,7 +16,7 @@ export const insert = createAsyncThunk('data/insert', async({address, firstName,
 
 export const select = createAsyncThunk('data/select', async() => {
   try {
-    const res = await axios.get('https://db-page-practice-0f7c8e4a291d.herokuapp.com/select/')
+    const res = await axios.get('https://db-page-practice-0f7c8e4a291d.herokuapp.com/select')
     return res.data
   } catch (err) {
     console.log(err)
