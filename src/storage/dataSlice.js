@@ -6,7 +6,7 @@ import { createAsyncThunk, createSlice } from '@reduxjs/toolkit';
 // insert action
 export const insert = createAsyncThunk('data/insert/', async({address, firstName, lastName, dob, email}) => {
   try {
-    const res = await axios.post('https://xlf3ljx3beaucz9x.cbetxkdyhwsb.us-east-1.rds.amazonaws.com/insert/', {address: address, firstName: firstName, lastName: lastName, dateOfBirth: dob, email: email})
+    const res = await axios.post('https://xlf3ljx3beaucz9x.cbetxkdyhwsb.us-east-1.rds.amazonaws.com:3306/insert/', {address: address, firstName: firstName, lastName: lastName, dateOfBirth: dob, email: email})
     return res.data
   } catch (err) {
     console.log(err)
@@ -16,7 +16,7 @@ export const insert = createAsyncThunk('data/insert/', async({address, firstName
 
 export const select = createAsyncThunk('data/select/', async() => {
   try {
-    const res = await axios.get('https://xlf3ljx3beaucz9x.cbetxkdyhwsb.us-east-1.rds.amazonaws.com/select/')
+    const res = await axios.get('https://xlf3ljx3beaucz9x.cbetxkdyhwsb.us-east-1.rds.amazonaws.com:3306/select/')
     return res.data
   } catch (err) {
     console.log(err)
