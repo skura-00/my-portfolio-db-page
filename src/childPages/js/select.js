@@ -40,7 +40,7 @@ function Select() {
         memberList.forEach((m) => {
 
           const shorten = m.dob ? m.dob.substring(0, 10) : '';
-          
+          console.log(m + " " + m.id)
           document.getElementById("out").insertAdjacentHTML('beforeend', 
           `<tbody>
             <tr>
