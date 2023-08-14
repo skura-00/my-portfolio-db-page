@@ -38,7 +38,9 @@ function Select() {
         });
 
         memberList.forEach((m) => {
-          const shorten = this.m.dob ? this.m.dob.substring(0, 10) : '';
+
+          const shorten = m.dob ? m.dob.substring(0, 10) : '';
+          
           document.getElementById("out").insertAdjacentHTML('beforeend', 
           `<tbody>
             <tr>
