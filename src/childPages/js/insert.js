@@ -37,6 +37,7 @@ function Insert() {
 
       <form onSubmit={submitHandler} className='container'>
         <h3 className='title'>Memberに新規メンバーを追加</h3>
+        <p>個人情報は記入しないでください。</p>
 
         <section>
           <label htmlFor='address'>住所</label>
