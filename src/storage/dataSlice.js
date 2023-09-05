@@ -4,7 +4,7 @@ import { createAsyncThunk, createSlice } from '@reduxjs/toolkit';
 
 
 // insert action
-export const insert = createAsyncThunk('data/insert/', async({address, firstName, lastName, dob, email}) => {
+export const insert = createAsyncThunk('data/insert', async({address, firstName, lastName, dob, email}) => {
   try {
     const res = await axios.post('/insert', 
     {
@@ -21,7 +21,7 @@ export const insert = createAsyncThunk('data/insert/', async({address, firstName
 })
 
 
-export const select = createAsyncThunk('data/select/', async() => {
+export const select = createAsyncThunk('data/select', async() => {
   try {
     const res = await axios.get('/select')
     return res.data
@@ -31,7 +31,7 @@ export const select = createAsyncThunk('data/select/', async() => {
 })
 
 
-export const selectClub = createAsyncThunk('data/selectClub/', async() => {
+export const selectClub = createAsyncThunk('data/selectClub', async() => {
   try {
     const res = await axios.get('/selectClub')
     return res.data
