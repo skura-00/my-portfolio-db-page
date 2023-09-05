@@ -6,7 +6,7 @@ import { createAsyncThunk, createSlice } from '@reduxjs/toolkit';
 // insert action
 export const insert = createAsyncThunk('data/insert/', async({address, firstName, lastName, dob, email}) => {
   try {
-    const res = await axios.post('https://main--my-portfolio-db-page.netlify.app/insert', 
+    const res = await axios.post('https://db-page-practice-0f7c8e4a291d.herokuapp.com/insert/', 
     {
       address: address, 
       firstName: firstName, 
@@ -23,7 +23,7 @@ export const insert = createAsyncThunk('data/insert/', async({address, firstName
 
 export const select = createAsyncThunk('data/select/', async() => {
   try {
-    const res = await axios.get('https://main--my-portfolio-db-page.netlify.app/select')
+    const res = await axios.get('https://db-page-practice-0f7c8e4a291d.herokuapp.com/select/')
     return res.data
   } catch (err) {
     console.log(err)
@@ -33,7 +33,7 @@ export const select = createAsyncThunk('data/select/', async() => {
 
 export const selectClub = createAsyncThunk('data/selectClub/', async() => {
   try {
-    const res = await axios.get('https://main--my-portfolio-db-page.netlify.app/select2')
+    const res = await axios.get('https://db-page-practice-0f7c8e4a291d.herokuapp.com/selectClub/')
     return res.data
   } catch (err) {
     console.log(err)
