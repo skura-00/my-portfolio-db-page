@@ -32,7 +32,8 @@ function SelectMember() {
     dispatch(select())
     .then((res) => {
       if (res.payload != undefined && res.payload.length > 0) {
-        (res.payload).forEach(m => memberList.push(Member(m.StudentID, m.Member_Address, m.First_Name, m.Last_Name, m.Date_Of_Birth, m.Email))
+        const arr = Array.from(res.payload);
+        arr.forEach(m => memberList.push(Member(m.StudentID, m.Member_Address, m.First_Name, m.Last_Name, m.Date_Of_Birth, m.Email))
         );
 
 
