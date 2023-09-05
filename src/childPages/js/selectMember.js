@@ -1,7 +1,6 @@
 import React from 'react';
 import { useDispatch, useSelector} from 'react-redux';
 import { select } from '../../storage/dataSlice';
-import SelectClub  from './selectClub';
 import '../css/select.css'
 
 function Member(id, adrs, fname, lname, dob, eml) {
@@ -33,9 +32,8 @@ function SelectMember() {
     dispatch(select())
     .then((res) => {
       if (res.payload != undefined && res.payload.length > 0) {
-        (res.payload).forEach((m) => {
-          memberList.push(Member(m.StudentID, m.Member_Address, m.First_Name, m.Last_Name, m.Date_Of_Birth, m.Email))
-        });
+        (res.payload).forEach(m => memberList.push(Member(m.StudentID, m.Member_Address, m.First_Name, m.Last_Name, m.Date_Of_Birth, m.Email))
+        );
 
 
         memberList.forEach((m) => {
