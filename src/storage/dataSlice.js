@@ -67,7 +67,7 @@ const dataSlice = createSlice({
   extraReducers(builder) {
     builder
     .addCase(select.fulfilled, (state, action) => {
-      console.log(action.payload)
+      console.log(action.meta)
       state.members = state.members.concat(action.payload)
     })
     .addCase(select.rejected, (state, action) => {
